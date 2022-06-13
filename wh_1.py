@@ -4,7 +4,7 @@ from firebase_admin import credentials ,firestore
 
 with open('weatherurl.txt', 'r') as f:
     apiurl = f.read()
-url = str(apiurl[:-2])
+url = str(apiurl[:-1])
 res = requests.get(url).json()
 
 today = datetime.datetime.now(tz=datetime.timezone(datetime.timedelta(hours=8)))
