@@ -1,7 +1,10 @@
 from gettext import find
 import requests , json ,firebase_admin ,zlib,datetime
 from firebase_admin import credentials ,firestore
-url = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-089?Authorization=CWB-47CDBBBF-5BE4-4ED9-9E0E-E7BB63D9BD30&format=JSON&locationName=&elementName=WeatherDescription"
+
+with open('weatherurl.txt', 'r') as f:
+    apiurl = f.read()
+url = str(apiurl[:-2])
 res = requests.get(url).json()
 
 today = datetime.datetime.now(tz=datetime.timezone(datetime.timedelta(hours=8)))

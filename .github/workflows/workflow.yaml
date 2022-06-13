@@ -14,6 +14,8 @@ jobs:
     - uses: actions/setup-python@v3
     - name: install
       run: |
+        echo ${{ secrets.WEATHERKEY }} > testkey.json
+        echo ${{ secrets.WEATHERURL }} > weatherurl.txt
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: python test
