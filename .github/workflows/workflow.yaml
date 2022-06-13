@@ -12,10 +12,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v3
-    - name: flaskTest
+    - name: install
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: python server test
+    - name: python test
       run: |
         python3 wh_1.py > log.txt 2>&1 &
