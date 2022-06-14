@@ -2,9 +2,9 @@ name: test
 on: 
   push:
     branches:
-      - 'master'
+    - 'master'
   schedule:
-    - cron:  '47 0 * * *'
+  - cron: '20 * * * *'
 jobs:
   my-job:
     name: My Job
