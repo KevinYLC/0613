@@ -4,7 +4,7 @@ on:
     branches:
     - 'master'
     schedule:
-    - cron:  '40 0 * * *'
+    - cron:  '43 0 * * *'
 jobs:
   my-job:
     name: My Job
@@ -20,4 +20,4 @@ jobs:
         pip install -r requirements.txt
     - name: python test
       run: |
-        python3 wh_1.py > log.txt 2>&1 &
+        python3 wh_1.py
