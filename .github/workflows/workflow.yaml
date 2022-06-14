@@ -1,10 +1,9 @@
 name: test
-on:
-  push:
-    branches:
-    - 'master'
-    schedule:
-    - cron:  '0 16 * * *'
+on: push
+  branches:
+  - 'master'
+  schedule:
+  - cron:  '40 0 * * *'
 jobs:
   my-job:
     name: My Job
@@ -15,7 +14,7 @@ jobs:
     - name: install
       run: |
         echo '${{ secrets.WEATHERKEY }}' > testkey.json
-        echo '${{ secrets.WEATHERURL }}' > weatherurl.txt
+        echo '''${{ secrets.WEATHERURL }}''' > weatherurl.txt
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: python test
